@@ -1,0 +1,68 @@
+{
+  "scope": "Packaged static TS-frame surround-view validation; no full-video playback.",
+  "environment": {
+    "os": "Linux",
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "Pillow": "13.0.0",
+    "ffmpeg": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers"
+  },
+  "tested_input": {
+    "filename": "20261113_14h46m56s.ts",
+    "size_bytes": 22675456,
+    "included_in_zip": false
+  },
+  "main_cli": {
+    "cli_exit_code": 0,
+    "working_directory": "outside package",
+    "space_in_input_path": true,
+    "comparisons": [
+      {
+        "file": "source_frame.png",
+        "pixels_equal": true,
+        "max_channel_difference": 0
+      },
+      {
+        "file": "surround_preview.png",
+        "pixels_equal": true,
+        "max_channel_difference": 0
+      },
+      {
+        "file": "source_labeled.png",
+        "pixels_equal": true,
+        "max_channel_difference": 0
+      }
+    ],
+    "out_of_range_seek": {
+      "exit_code": 1,
+      "stale_frame_not_used": true,
+      "previous_source_unchanged": true
+    },
+    "optional_refit_equals_saved_calibration": true
+  },
+  "original_calibration_files": {
+    "user_upload_count": 12,
+    "apk_extracted_profile_count": 1,
+    "size_and_sha256_match_original": true
+  },
+  "python_syntax_target": "3.10 (static syntax check)",
+  "windows_runtime_tested": false,
+  "notes": [
+    "The Linux execution reproduced the three previous reference images exactly.",
+    "Font availability on another machine may change labels without changing geometry.",
+    "Geometry and lens values are not refitted by main.py."
+  ],
+  "extracted_archive_default_command": {
+    "exit_code": 0,
+    "default_time_seconds": 5.0,
+    "default_config_and_output_resolved_from_package": true,
+    "preview_pixels_equal_to_reference": true
+  },
+  "archive": {
+    "ts_file_count": 0,
+    "compiled_cache_file_count": 0,
+    "hidden_app_settings_included": true,
+    "crc_check_passed": true
+  }
+}

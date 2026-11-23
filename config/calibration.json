@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "description": "Saved calibration used for the static surround-view validation; main.py applies these values without refitting.",
+  "native_camera_size": [
+    1920,
+    1080
+  ],
+  "coordinate_convention": {
+    "x_positive": "vehicle left",
+    "y_positive": "vehicle front",
+    "surface": "ground plane Z=0",
+    "origin": "centre of the configured vehicle rectangle"
+  },
+  "vehicle": {
+    "width_m": 2.0999999046325684,
+    "length_m": 4.75
+  },
+  "lens_model": "unified_sphere_radial",
+  "lens_profile": "1002A_2053_1080p.brp",
+  "cameras": [
+    {
+      "index": 0,
+      "direction": "FRONT",
+      "tile": [
+        0,
+        0
+      ],
+      "principal_center": [
+        960,
+        560
+      ],
+      "lens_parameters": {
+        "fx": 1307.2835906594744,
+        "fy": 1306.6803087567835,
+        "xi": 2.010677618454484,
+        "k1": 0.058886979592530204,
+        "k2": 0.8593381219094735,
+        "p1": 0.0,
+        "p2": 0.0,
+        "cx": 960.0,
+        "cy": 560.0,
+        "version": 240325
+      },
+      "ground_homography": [
+        [
+          -0.5090935380491152,
+          -0.0028854776469696393,
+          0.021412110345591748
+        ],
+        [
+          -0.0020920151570006846,
+          -0.17870304188156327,
+          0.6728991021103793
+        ],
+        [
+          0.005826408520684014,
+          0.4282122791041807,
+          -1.0
+        ]
+      ],
+      "blend_camera_center_metres": [
+        0.012696807033628686,
+        2.573080057856191,
+        0.4565118206193847
+      ],
+      "outward_normal": [
+        0,
+        1
+      ],
+      "fitting_residual_native_px": {
+        "rms": 3.5100729255732372,
+        "max": 5.45267700301262
+      }
+    },
+    {
+      "index": 1,
+      "direction": "REAR",
+      "tile": [
+        1,
+        0
+      ],
+      "principal_center": [
+        945,
+        555
+      ],
+      "lens_parameters": {
+        "fx": 1307.2835906594744,
+        "fy": 1306.6803087567835,
+        "xi": 2.010677618454484,
+        "k1": 0.058886979592530204,
+        "k2": 0.8593381219094735,
+        "p1": 0.0,
+        "p2": 0.0,
+        "cx": 945.0,
+        "cy": 555.0,
+        "version": 240325
+      },
+      "ground_homography": [
+        [
+          0.48849836043412276,
+          0.04318047087832269,
+          0.053158716142171436
+        ],
+        [
+          -0.033337431605131945,
+          0.2869237192278409,
+          1.0
+        ],
+        [
+          0.021859880184971488,
+          -0.3689930030453716,
+          -0.6118989149631827
+        ]
+      ],
+      "blend_camera_center_metres": [
+        0.12887831963503887,
+        -2.3508438660559836,
+        0.8336457628012491
+      ],
+      "outward_normal": [
+        0,
+        -1
+      ],
+      "fitting_residual_native_px": {
+        "rms": 3.4091236817669888,
+        "max": 5.378035590865682
+      }
+    },
+    {
+      "index": 2,
+      "direction": "LEFT",
+      "tile": [
+        0,
+        1
+      ],
+      "principal_center": [
+        1005,
+        550
+      ],
+      "lens_parameters": {
+        "fx": 1307.2835906594744,
+        "fy": 1306.6803087567835,
+        "xi": 2.010677618454484,
+        "k1": 0.058886979592530204,
+        "k2": 0.8593381219094735,
+        "p1": 0.0,
+        "p2": 0.0,
+        "cx": 1005.0,
+        "cy": 550.0,
+        "version": 240325
+      },
+      "ground_homography": [
+        [
+          -0.1533720823648237,
+          0.6477563546924926,
+          -0.38930887265045144
+        ],
+        [
+          -0.5047671039029967,
+          -0.02230545900203136,
+          1.0
+        ],
+        [
+          0.3435521754536761,
+          0.13800372176371312,
+          0.041843267185956684
+        ]
+      ],
+      "blend_camera_center_metres": [
+        1.1512063663173417,
+        0.7623508466665904,
+        1.004772860444468
+      ],
+      "outward_normal": [
+        1,
+        0
+      ],
+      "fitting_residual_native_px": {
+        "rms": 1.432949974283896,
+        "max": 2.6214482949445355
+      }
+    },
+    {
+      "index": 3,
+      "direction": "RIGHT",
+      "tile": [
+        1,
+        1
+      ],
+      "principal_center": [
+        910,
+        570
+      ],
+      "lens_parameters": {
+        "fx": 1307.2835906594744,
+        "fy": 1306.6803087567835,
+        "xi": 2.010677618454484,
+        "k1": 0.058886979592530204,
+        "k2": 0.8593381219094735,
+        "p1": 0.0,
+        "p2": 0.0,
+        "cx": 910.0,
+        "cy": 570.0,
+        "version": 240325
+      },
+      "ground_homography": [
+        [
+          -0.13825981322505612,
+          -0.7114925218667101,
+          0.4029114850956742
+        ],
+        [
+          0.5422253602278487,
+          -0.0028079357833644867,
+          1.0
+        ],
+        [
+          -0.36122391475139237,
+          0.15721344414186436,
+          0.0651695605049561
+        ]
+      ],
+      "blend_camera_center_metres": [
+        -1.1086419724761096,
+        0.6264694198948789,
+        0.9367799662613282
+      ],
+      "outward_normal": [
+        -1,
+        0
+      ],
+      "fitting_residual_native_px": {
+        "rms": 1.7830505342952874,
+        "max": 3.429490766905193
+      }
+    }
+  ],
+  "notes": [
+    "These homographies were fitted from the stored calibration markers; they are not original native R/t extrinsics.",
+    "The blend camera centres are estimates used by the existing directional blending; do not interpret them as measured mounting positions.",
+    "Fitting residuals describe the same calibration points used for the fit and are not independent TS accuracy measurements.",
+    "The runtime copy of the named profile on the actual Android device was not byte-compared with the APK copy."
+  ]
+}

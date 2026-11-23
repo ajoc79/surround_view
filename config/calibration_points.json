@@ -1,0 +1,660 @@
+{
+  "source": "360CalibConfig",
+  "size": 1436,
+  "header": "CALIB4_IVICAR_240612",
+  "verification": "Fields verified against native ConfigurationManager::PrintCalibrationConfig at VA 0x819084; in-memory base is manager+1452.",
+  "fields": {
+    "customer_id": {
+      "offset": 20,
+      "type": "int32",
+      "value": 0
+    },
+    "car_width": {
+      "offset": 24,
+      "type": "float32",
+      "value": 2.0999999046325684
+    },
+    "car_length": {
+      "offset": 28,
+      "type": "float32",
+      "value": 4.75
+    },
+    "car_height": {
+      "offset": 32,
+      "type": "float32",
+      "value": 1.2000000476837158
+    },
+    "calibration_pattern_enum": {
+      "offset": 36,
+      "type": "int32",
+      "value": 6
+    },
+    "unidentified_field_0x28": {
+      "offset": 40,
+      "type": "int32",
+      "value": 0
+    },
+    "wheel_base": {
+      "offset": 44,
+      "type": "float32",
+      "value": 3.0
+    },
+    "front_tread": {
+      "offset": 48,
+      "type": "float32",
+      "value": 1.600000023841858
+    },
+    "rear_overhang": {
+      "offset": 52,
+      "type": "float32",
+      "value": 1.399999976158142
+    },
+    "distance_car_head_to_pattern": {
+      "offset": 56,
+      "type": "float32",
+      "value": 0.0
+    },
+    "distance_car_rear_to_pattern": {
+      "offset": 60,
+      "type": "float32",
+      "value": 0.0
+    },
+    "distance_car_head_to_mirrors": {
+      "offset": 64,
+      "type": "float32",
+      "value": 1.600000023841858
+    },
+    "custom_block_pattern_length": {
+      "offset": 68,
+      "type": "float32",
+      "value": 1.0
+    },
+    "custom_block_pattern_distance": {
+      "offset": 72,
+      "type": "float32",
+      "value": 2.200000047683716
+    }
+  },
+  "calibration_pattern_name": {
+    "value": "U Shape With Circle",
+    "evidence": "Enum 6: jump table 0x4cc5b1[6] -> 0x8198fc; string 0x3d97d7."
+  },
+  "camera_index_names": [
+    "front",
+    "rear",
+    "left",
+    "right"
+  ],
+  "camera_order_evidence": "DEX Renderer.onDrawFrame assigns mImageFront, mImageBack, mImageLeft, mImageRight into dataHardwareBuff[0..3] then calls setCameraBuffer; verified by apk_dex_paths agent.",
+  "units": {
+    "pixel_fields": "native camera pixel coordinates, 1920x1080 for provided captures",
+    "world_fields": "metres; CalibrationPattern::Init 0x99bf54 logs car length/width in m and 0x99beec..0x99bf1c stores dimensions multiplied by 100 as integer centimetres"
+  },
+  "coordinate_convention": {
+    "x_positive": "vehicle left",
+    "y_positive": "vehicle front",
+    "z_sign": "All calibration target points have Z=0. Native PnP uses XYZ unchanged; above/below-plane sign is not established by these correspondences alone. Positive nominal configuration height must not be confused with the recovered PnP camera-centre Z.",
+    "origin": "vehicle rectangle centre on ground"
+  },
+  "extrinsic_matrices_stored": false,
+  "cameras": [
+    {
+      "index": 0,
+      "direction": "front",
+      "height": 0.6000000238418579,
+      "height_offset": 76,
+      "lateral_offset": 0.0,
+      "lateral_offset_offset": 92,
+      "principal_center": [
+        960,
+        560
+      ],
+      "principal_center_offset": 108,
+      "source_mark_points": [
+        [
+          464,
+          570
+        ],
+        [
+          588,
+          572
+        ],
+        [
+          326,
+          668
+        ],
+        [
+          378,
+          741
+        ],
+        [
+          1345,
+          575
+        ],
+        [
+          1468,
+          574
+        ],
+        [
+          1556,
+          743
+        ],
+        [
+          1603,
+          672
+        ]
+      ],
+      "source_mark_points_offset": 140,
+      "world_mark_points": [
+        [
+          2.299999952316284,
+          3.625,
+          0.0
+        ],
+        [
+          1.2999999523162842,
+          3.625,
+          0.0
+        ],
+        [
+          2.299999952316284,
+          2.625,
+          0.0
+        ],
+        [
+          1.2999999523162842,
+          2.625,
+          0.0
+        ],
+        [
+          -1.2999999523162842,
+          3.625,
+          0.0
+        ],
+        [
+          -2.299999952316284,
+          3.625,
+          0.0
+        ],
+        [
+          -1.2999999523162842,
+          2.625,
+          0.0
+        ],
+        [
+          -2.299999952316284,
+          2.625,
+          0.0
+        ]
+      ],
+      "world_mark_point_basis_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "fisheye_path": "/data/user/0/com.syu.fourcamera2/files/360res/aw3603D/param/1002A_2053_1080p.brp",
+      "fisheye_path_offset": 412,
+      "sdk_camera_position_from_config": [
+        0.0,
+        2.375,
+        0.6000000238418579
+      ],
+      "position_evidence": "ConfigurationManager::GetCameraPosition3D 0x81e12c: four-camera branch 0x81e13c..0x81e1ac."
+    },
+    {
+      "index": 1,
+      "direction": "rear",
+      "height": 1.0,
+      "height_offset": 80,
+      "lateral_offset": 0.0,
+      "lateral_offset_offset": 96,
+      "principal_center": [
+        945,
+        555
+      ],
+      "principal_center_offset": 116,
+      "source_mark_points": [
+        [
+          471,
+          569
+        ],
+        [
+          594,
+          556
+        ],
+        [
+          380,
+          710
+        ],
+        [
+          474,
+          752
+        ],
+        [
+          1209,
+          513
+        ],
+        [
+          1349,
+          510
+        ],
+        [
+          1359,
+          700
+        ],
+        [
+          1475,
+          641
+        ]
+      ],
+      "source_mark_points_offset": 204,
+      "world_mark_points": [
+        [
+          -2.299999952316284,
+          -3.625,
+          0.0
+        ],
+        [
+          -1.2999999523162842,
+          -3.625,
+          0.0
+        ],
+        [
+          -2.299999952316284,
+          -2.625,
+          0.0
+        ],
+        [
+          -1.2999999523162842,
+          -2.625,
+          0.0
+        ],
+        [
+          1.2999999523162842,
+          -3.625,
+          0.0
+        ],
+        [
+          2.299999952316284,
+          -3.625,
+          0.0
+        ],
+        [
+          1.2999999523162842,
+          -2.625,
+          0.0
+        ],
+        [
+          2.299999952316284,
+          -2.625,
+          0.0
+        ]
+      ],
+      "world_mark_point_basis_indices": [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "fisheye_path": "/data/user/0/com.syu.fourcamera2/files/360res/aw3603D/param/1002A_2053_1080p.brp",
+      "fisheye_path_offset": 668,
+      "sdk_camera_position_from_config": [
+        0.0,
+        -2.375,
+        1.0
+      ],
+      "position_evidence": "ConfigurationManager::GetCameraPosition3D 0x81e12c: four-camera branch 0x81e13c..0x81e1ac."
+    },
+    {
+      "index": 2,
+      "direction": "left",
+      "height": 1.100000023841858,
+      "height_offset": 84,
+      "lateral_offset": 0.0,
+      "lateral_offset_offset": 100,
+      "principal_center": [
+        1005,
+        550
+      ],
+      "principal_center_offset": 124,
+      "source_mark_points": [
+        [
+          357,
+          534
+        ],
+        [
+          395,
+          524
+        ],
+        [
+          318,
+          649
+        ],
+        [
+          344,
+          666
+        ],
+        [
+          1299,
+          484
+        ],
+        [
+          1385,
+          491
+        ],
+        [
+          1400,
+          651
+        ],
+        [
+          1468,
+          620
+        ]
+      ],
+      "source_mark_points_offset": 268,
+      "world_mark_points": [
+        [
+          2.299999952316284,
+          -3.625,
+          0.0
+        ],
+        [
+          2.299999952316284,
+          -2.625,
+          0.0
+        ],
+        [
+          1.2999999523162842,
+          -3.625,
+          0.0
+        ],
+        [
+          1.2999999523162842,
+          -2.625,
+          0.0
+        ],
+        [
+          2.299999952316284,
+          2.625,
+          0.0
+        ],
+        [
+          2.299999952316284,
+          3.625,
+          0.0
+        ],
+        [
+          1.2999999523162842,
+          2.625,
+          0.0
+        ],
+        [
+          1.2999999523162842,
+          3.625,
+          0.0
+        ]
+      ],
+      "world_mark_point_basis_indices": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "fisheye_path": "/data/user/0/com.syu.fourcamera2/files/360res/aw3603D/param/1002A_2053_1080p.brp",
+      "fisheye_path_offset": 924,
+      "sdk_camera_position_from_config": [
+        1.0499999523162842,
+        0.7749999761581421,
+        1.100000023841858
+      ],
+      "position_evidence": "ConfigurationManager::GetCameraPosition3D 0x81e12c: four-camera branch 0x81e13c..0x81e1ac."
+    },
+    {
+      "index": 3,
+      "direction": "right",
+      "height": 1.100000023841858,
+      "height_offset": 88,
+      "lateral_offset": 0.0,
+      "lateral_offset_offset": 104,
+      "principal_center": [
+        910,
+        570
+      ],
+      "principal_center_offset": 132,
+      "source_mark_points": [
+        [
+          519,
+          513
+        ],
+        [
+          597,
+          502
+        ],
+        [
+          445,
+          637
+        ],
+        [
+          505,
+          661
+        ],
+        [
+          1520,
+          514
+        ],
+        [
+          1561,
+          524
+        ],
+        [
+          1578,
+          653
+        ],
+        [
+          1604,
+          635
+        ]
+      ],
+      "source_mark_points_offset": 332,
+      "world_mark_points": [
+        [
+          -2.299999952316284,
+          3.625,
+          0.0
+        ],
+        [
+          -2.299999952316284,
+          2.625,
+          0.0
+        ],
+        [
+          -1.2999999523162842,
+          3.625,
+          0.0
+        ],
+        [
+          -1.2999999523162842,
+          2.625,
+          0.0
+        ],
+        [
+          -2.299999952316284,
+          -2.625,
+          0.0
+        ],
+        [
+          -2.299999952316284,
+          -3.625,
+          0.0
+        ],
+        [
+          -1.2999999523162842,
+          -2.625,
+          0.0
+        ],
+        [
+          -1.2999999523162842,
+          -3.625,
+          0.0
+        ]
+      ],
+      "world_mark_point_basis_indices": [
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "fisheye_path": "/data/user/0/com.syu.fourcamera2/files/360res/aw3603D/param/1002A_2053_1080p.brp",
+      "fisheye_path_offset": 1180,
+      "sdk_camera_position_from_config": [
+        -1.0499999523162842,
+        0.7749999761581421,
+        1.100000023841858
+      ],
+      "position_evidence": "ConfigurationManager::GetCameraPosition3D 0x81e12c: four-camera branch 0x81e13c..0x81e1ac."
+    }
+  ],
+  "blind_zone": {
+    "offset": 396,
+    "values": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "order": [
+      "front",
+      "rear",
+      "left",
+      "right"
+    ]
+  },
+  "pattern6_world_basis": {
+    "x_coordinates": [
+      2.299999952316284,
+      1.2999999523162842,
+      -1.2999999523162842,
+      -2.299999952316284
+    ],
+    "y_coordinates": [
+      3.625,
+      2.625,
+      -2.625,
+      -3.625
+    ],
+    "evidence": "SetCalibrationPatternType 0x999f08: enum6 selects 0x99ab5c (tables at 0x4ddb1c,0x4ddbc4,0x4ddbf8). X constants at 0x3886e0; Y offset constants at 0x38a540 and 0x383040. Calls InitModelAndPlaneDestMarks 0x998ec8; point stores 0x998f74..0x9997f8 define 32 ordered correspondences."
+  }
+}

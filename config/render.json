@@ -1,0 +1,21 @@
+{
+  "output_width": 1000,
+  "output_height": 1450,
+  "ground_x_half_extent_m": 4.0,
+  "ground_y_half_extent_m": 5.8,
+  "blend_cosine_power": 3,
+  "blend_edge_fade_px": 45.0,
+  "minimum_brightness": 7.0,
+  "weight_epsilon": 1e-07,
+  "native_border_px": 1.0,
+  "background_rgb": [
+    30,
+    33,
+    40
+  ],
+  "vehicle_fill_rgb": [
+    31,
+    40,
+    52
+  ]
+}

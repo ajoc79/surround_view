@@ -1,0 +1,96 @@
+{
+  "description": "Original uploaded calibration files are copied byte-for-byte. The named lens profile was extracted from the uploaded APK. No TS video is included.",
+  "files": [
+    {
+      "path": "360CalibConfig",
+      "origin": "user_upload",
+      "size_bytes": 1436,
+      "sha256": "335867833765580ef1d61a1d2a6172a9675108b37d817752dc6076dca56178a7",
+      "runtime_role": "reference; main.py reads calibration.json"
+    },
+    {
+      "path": "360ViewConfig",
+      "origin": "user_upload",
+      "size_bytes": 7556,
+      "sha256": "fb9f0e0b04165f01097317ba7e1a8db31bc0f29b51a1d15b9f74c6d7b59c9360",
+      "runtime_role": "reference; main.py reads calibration.json"
+    },
+    {
+      "path": "0.brp",
+      "origin": "user_upload",
+      "size_bytes": 72,
+      "sha256": "5207806d9de831a40493dbc00cf44c71b34cfc8e317f5e344c095b03ffeaafce",
+      "runtime_role": "reference; main.py reads calibration.json"
+    },
+    {
+      "path": "1.brp",
+      "origin": "user_upload",
+      "size_bytes": 72,
+      "sha256": "dd46a31dfdb2f2673072b10af96f98a0c54ddc615172d7c42710fe5311f621c2",
+      "runtime_role": "reference; main.py reads calibration.json"
+    },
+    {
+      "path": "2.brp",
+      "origin": "user_upload",
+      "size_bytes": 72,
+      "sha256": "62830b898efc5457090a18042bf566dac4990e303ee8047afe4826711a4754a1",
+      "runtime_role": "reference; main.py reads calibration.json"
+    },
+    {
+      "path": "3.brp",
+      "origin": "user_upload",
+      "size_bytes": 72,
+      "sha256": "40f30da6ab60ce5b0310ec2319974dedb4aacd7c68d1889a8e60131cda8182bb",
+      "runtime_role": "reference; main.py reads calibration.json"
+    },
+    {
+      "path": ".fourcamera2_param",
+      "origin": "user_upload",
+      "size_bytes": 1282,
+      "sha256": "03b9b9c8025d7a8972010231296b5d55470249188a0a09869a8e19049e3b2877",
+      "runtime_role": "reference; main.py reads calibration.json"
+    },
+    {
+      "path": ".fourcamera_image",
+      "origin": "user_upload",
+      "size_bytes": 298,
+      "sha256": "d44dddaf324bc1bb6ee3429a0500b5279ef30180ca23a9002731071ca05c93cd",
+      "runtime_role": "reference; main.py reads calibration.json"
+    },
+    {
+      "path": "1002A_2053_1080p.brp",
+      "origin": "user-uploaded APK assets/aw3603D.zip/aw3603D/param/1002A_2053_1080p.brp",
+      "size_bytes": 72,
+      "sha256": "96b9de8f18fcd8af847c15778a221ee62b9a75d7a078f190aa6bbca07c5d1e4c",
+      "runtime_role": "lens profile used to compute saved calibration; refit tool reads this file"
+    },
+    {
+      "path": "calibration_frames/frame_0_A0_cam0_1920x1080.NV21",
+      "origin": "user_upload",
+      "size_bytes": 3110400,
+      "sha256": "5f669a9e744faba615c624579915e607997d30e251e1733ed172595b2ccdf48e",
+      "runtime_role": "reference calibration capture; not required for normal TS conversion"
+    },
+    {
+      "path": "calibration_frames/frame_1_A0_cam1_1920x1080.NV21",
+      "origin": "user_upload",
+      "size_bytes": 3110400,
+      "sha256": "8605c4199d19496b48f0374b463b1e9dbbe4e9467478a9089073a7fb952f6789",
+      "runtime_role": "reference calibration capture; not required for normal TS conversion"
+    },
+    {
+      "path": "calibration_frames/frame_2_A0_cam2_1920x1080.NV21",
+      "origin": "user_upload",
+      "size_bytes": 3110400,
+      "sha256": "c9fe50cdb6a76202c25b86cb02489c133604f695f44da49de3cb386c345e1595",
+      "runtime_role": "reference calibration capture; not required for normal TS conversion"
+    },
+    {
+      "path": "calibration_frames/frame_3_A0_cam3_1920x1080.NV21",
+      "origin": "user_upload",
+      "size_bytes": 3110400,
+      "sha256": "bd1bc7b2fd0435f1b6dcd7529ae5f39d1d0306170c888eeb0ac941b56774479c",
+      "runtime_role": "reference calibration capture; not required for normal TS conversion"
+    }
+  ]
+}
