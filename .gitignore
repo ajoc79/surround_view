@@ -1,2 +1,6 @@
 data/*
 *.ts
+/target/
+/dist/
+/output/
+__pycache__/

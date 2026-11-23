@@ -1,3 +1,45 @@
+# Surround View 플레이어
+
+Rust·egui로 만든 네이티브 및 웹 플레이어입니다. 2×2 카메라가 들어 있는 H.264 MPEG-TS 파일을 열면 기존 렌즈·지면 보정을 wgpu로 적용합니다. **Top view**는 기존 탑뷰이며 **360° view**는 드래그로 회전하고 스크롤로 확대할 수 있습니다. 영상 위치는 타임라인에서 바꿀 수 있습니다.
+
+## Windows·Linux
+
+Rust 1.92 이상과 FFmpeg 7 이상이 필요합니다. `ffmpeg`와 `ffprobe`를 PATH에 추가하세요. MP4 내보내기에는 `libx264`가 포함된 FFmpeg 빌드가 필요합니다. Linux에서 파일 선택기는 데스크톱의 XDG 포털을 사용합니다. 실행 인자로 파일을 넘길 수도 있습니다.
+
+```bash
+cargo run --release --locked -- "/path/to/recording.ts"
+```
+
+**Export 360° MP4**는 단안 equirectangular H.264 MP4를 4096×2048, 30fps로 만듭니다. 구면 메타데이터가 포함된 MP4를 YouTube에 업로드하면 360° 영상으로 처리할 수 있습니다. 파일 선택 없이 변환하려면 다음 명령을 사용합니다.
+
+```bash
+cargo run --release --locked -- --export-360 "/path/to/recording.ts" "surround-360.mp4"
+```
+
+출력 파일 이름은 기존 파일과 겹치지 않게 지정하세요. 첫 버전은 영상 트랙을 재생하고 내보냅니다. 360° 화면은 지면 보정을 곡면에 투영하므로 높이와 이음새가 실제 공간과 다를 수 있으며 촬영 범위 밖은 배경색으로 표시됩니다.
+
+## 웹
+
+```bash
+rustup target add wasm32-unknown-unknown
+cargo install trunk --locked
+trunk serve --release
+```
+
+WebGPU와 H.264 WebCodecs를 지원하는 Chrome 또는 Edge에서 열고 **Open TS**로 로컬 영상을 선택하세요. 배포는 `trunk build --release`의 `dist/`를 HTTPS에서 제공하면 됩니다. 웹에서 파일을 읽고 합성하는 과정은 기기 안에서 수행됩니다. MP4 내보내기는 네이티브 기능입니다.
+
+## 검증
+
+```bash
+cargo test --locked
+SURROUND_TEST_TS=/path/to/20261113_14h46m56s.ts cargo test --locked recorder_ -- --ignored
+cargo check --locked --target wasm32-unknown-unknown
+```
+
+기존 Python 의존성도 설치한 환경에서는 `cargo test --locked ground_projection_matches_python -- --ignored`로 탑뷰 픽셀을 비교할 수 있습니다. 아래 Python CLI는 보정값을 다시 계산하는 데 사용할 수 있습니다.
+
+---
+
 # 차량 중심 정지 어라운드뷰 검증 코드
 
 기존 보정값을 그대로 적용해 **TS 한 프레임 추출 → 카메라 4영역 분리 → 보정 좌표 적용 → 지면 어라운드뷰 합성**을 수행하는 Python 패키지입니다.
